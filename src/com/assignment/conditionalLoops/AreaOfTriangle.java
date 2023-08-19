@@ -2,14 +2,14 @@ package com.assignment.conditionalLoops;
 
 import java.util.Scanner;
 
-public class AreaOfTriangel {
+public class AreaOfTriangle {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the base ");
-        int base = in.nextInt();
+        double base = in.nextInt();
         System.out.println("Enter the height");
-        int height = in.nextInt();
-        int Area = ((1 / 2) * (base * height));
-        System.out.println("Area of Triangel is" + Area);
+        double height = in.nextInt();
+        double Area = (0.5 * (base * height));
+        System.out.println("Area of Triangle is " + Area);
     }
 }

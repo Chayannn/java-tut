@@ -1,21 +1,35 @@
 package com.assignment.firstjava;
 
-public class palindromOrNot {
+import java.util.Scanner;
+
+public class palindromicOrNot {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
 
-        String str = "Radar", reverseStr = "";
-
-        int strLength = str.length();
-
-        for (int i = (strLength - 1); i >= 0; --i) {
-            reverseStr = reverseStr + str.charAt(i);
-        }
-
-        if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
-            System.out.println(str + " is a Palindrome String.");
+        if (isPalindrome(input)) {
+            System.out.println("The string is a palindrome.");
         } else {
-            System.out.println(str + " is not a Palindrome String.");
+            System.out.println("The string is not a palindrome.");
         }
     }
 
+    public static boolean isPalindrome(String str) { //the boolean keyword is here because the boolean return type is used to indicate that the method isPalindrome will return a value of either true or false.
+        str = str.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false; // Characters don't match, not a palindrome
+            }
+            left++;
+            right--;
+        }
+
+        return true; // All characters matched, it's a palindrome
+    }
 }
+
+
